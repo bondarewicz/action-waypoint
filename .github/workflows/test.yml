@@ -10,6 +10,8 @@ jobs:
           npm install
       - run: |
           npm run all
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: ${{ secrets.ACTIONS_ALLOW_UNSECURE_COMMANDS }}
       - uses: ./
         name: Setup
         with:
