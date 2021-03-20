@@ -11,7 +11,7 @@ jobs:
       - run: |
           npm run all
         env:
-          ACTIONS_ALLOW_UNSECURE_COMMANDS: ${{ secrets.ACTIONS_ALLOW_UNSECURE_COMMANDS }}
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: ${{ secrets.ACTIONS_ALLOW_UNSECURE_COMMANDS }} 
       - uses: ./
         name: Setup
         with:
@@ -28,6 +28,8 @@ jobs:
           operation: build
           version: '0.2.4'
           workspace: default
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: ${{ secrets.ACTIONS_ALLOW_UNSECURE_COMMANDS }}
       - uses: ./
         name: Deploy
         with:
